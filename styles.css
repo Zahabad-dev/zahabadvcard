@@ -8,15 +8,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #e8f0f7 0%, #d4e4f1 100%);
     min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    overflow: hidden;
 }
 
 .container {
     width: 100%;
     max-width: 500px;
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
 }
 
 .card {
@@ -41,15 +45,15 @@ body {
 
 .card-header {
     background: linear-gradient(135deg, #1e3a5f 0%, #2c5f7d 100%);
-    padding: 40px 20px;
+    padding: 25px 15px;
     text-align: center;
     color: white;
 }
 
 .profile-img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,37 +71,38 @@ body {
 }
 
 .name {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .title {
-    font-size: 16px;
+    font-size: 13px;
     opacity: 0.9;
     font-weight: 300;
 }
 
 .card-body {
-    padding: 30px 20px;
+    padding: 15px;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .info-item {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
-    padding: 15px;
+    gap: 10px;
+    padding: 10px;
     background: #f5f8fb;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
     border: 1px solid #e8eff5;
+    font-size: 14px;
 }
 
 .info-item:hover {
@@ -107,10 +112,10 @@ body {
 }
 
 .info-item i {
-    font-size: 20px;
+    font-size: 16px;
     color: #2c5f7d;
-    min-width: 20px;
-    margin-top: 2px;
+    min-width: 16px;
+    margin-top: 1px;
 }
 
 .info-item a {
@@ -129,28 +134,28 @@ body {
 }
 
 .card-footer {
-    padding: 20px;
+    padding: 12px;
     background: #f5f8fb;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
     border-top: 1px solid #e8eff5;
 }
 
 .btn {
     flex: 1;
-    padding: 15px 25px;
+    padding: 12px 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     background: linear-gradient(135deg, #2c5f7d 0%, #1e3a5f 100%);
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -175,15 +180,59 @@ body {
 
 /* Responsive */
 @media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        max-height: calc(100vh - 10px);
+    }
+    
+    .card-header {
+        padding: 20px 15px;
+    }
+    
+    .profile-img {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 10px;
+    }
+    
     .name {
-        font-size: 24px;
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+    
+    .title {
+        font-size: 12px;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .contact-info {
+        gap: 8px;
+    }
+    
+    .info-item {
+        padding: 8px;
+        font-size: 12px;
+        gap: 8px;
+    }
+    
+    .info-item i {
+        font-size: 14px;
     }
     
     .card-footer {
-        flex-direction: column;
+        padding: 10px;
+        gap: 6px;
     }
     
     .btn {
-        width: 100%;
+        padding: 10px 12px;
+        font-size: 12px;
+        gap: 5px;
     }
 }
