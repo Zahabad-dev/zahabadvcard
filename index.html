@@ -10,44 +10,83 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <div class="profile-img">
-                    <img src="logo.png" alt="Logo Missael López Lira" class="logo">
-                </div>
-                <h1 class="name">L.C.E Missael López Lira</h1>
-                <p class="title">Licenciado en Comercio Exterior</p>
-                <p class="subtitle">Proveedor Industrial</p>
-            </div>
-            
-            <div class="card-body">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:missaellopezlira75@gmail.com">missaellopezlira75@gmail.com</a>
+        <div class="card-container">
+            <div class="card">
+                <!-- Cara frontal -->
+                <div class="card-front">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <img src="logo.png" alt="Logo Missael López Lira" class="logo">
+                        </div>
+                        <h1 class="name">L.C.E Missael López Lira</h1>
+                        <p class="title">Licenciado en Comercio Exterior</p>
+                        <p class="subtitle">Proveedor Industrial</p>
                     </div>
                     
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+524421154412">442-115-4412</a>
+                    <div class="card-body">
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:missaellopezlira75@gmail.com">missaellopezlira75@gmail.com</a>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+524421154412">442-115-4412</a>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>C. Jose Maria Ochoa 423, Col Los Candiles<br>76190. Corregidora, QRO.</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>C. Jose Maria Ochoa 423, Col Los Candiles<br>76190. Corregidora, QRO.</span>
+                    <div class="card-footer">
+                        <button class="btn" onclick="saveContact()">
+                            <i class="fas fa-address-card"></i>
+                            Guardar Contacto
+                        </button>
+                        <button class="btn btn-share" onclick="shareCard()">
+                            <i class="fas fa-share-alt"></i>
+                            Compartir
+                        </button>
                     </div>
                 </div>
-            </div>
-            
-            <div class="card-footer">
-                <button class="btn" onclick="saveContact()">
-                    <i class="fas fa-address-card"></i>
-                    Guardar Contacto
-                </button>
-                <button class="btn btn-share" onclick="shareCard()">
-                    <i class="fas fa-share-alt"></i>
-                    Compartir
-                </button>
+                
+                <!-- Cara trasera -->
+                <div class="card-back">
+                    <div class="card-header">
+                        <div class="profile-img">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h1 class="name">Especialidades</h1>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="specialties">
+                            <div class="specialty-item">
+                                <i class="fas fa-snowflake"></i>
+                                <div class="specialty-content">
+                                    <h3>Gas Refrigerante R134a</h3>
+                                    <p>Proveedor especializado en refrigerantes industriales de alta calidad</p>
+                                </div>
+                            </div>
+                            
+                            <div class="specialty-item">
+                                <i class="fas fa-industry"></i>
+                                <div class="specialty-content">
+                                    <h3>Textiles Industriales</h3>
+                                    <p>Soluciones completas en textiles para la industria</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <p class="flip-hint"><i class="fas fa-undo"></i> Toca para volver</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
