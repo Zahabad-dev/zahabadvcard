@@ -13,12 +13,11 @@ card.addEventListener('click', function(e) {
 function saveContact() {
     const vCard = `BEGIN:VCARD
 VERSION:3.0
-FN:L.C.E Missael López Lira
-N:López Lira;Missael;;;
-EMAIL:missaellopezlira75@gmail.com
-TEL;TYPE=CELL:+524421154412
-ADR;TYPE=HOME:;;C. Jose Maria Ochoa 423, Col Los Candiles;Corregidora;QRO;76190;México
-TITLE:Licenciado en Comercio Exterior
+FN:ERIK ZAHABAD
+N:ZAHABAD;ERIK;;;
+TEL;TYPE=CELL:+527751027037
+TITLE:Lic. en Negocios Internacionales
+ROLE:Distribuidor y Desarrollador de Software
 END:VCARD`;
 
     const blob = new Blob([vCard], { type: 'text/vcard' });
@@ -26,7 +25,7 @@ END:VCARD`;
     
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Missael_Lopez_Lira.vcf';
+    link.download = 'Erik_Zahabad.vcf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -39,8 +38,8 @@ END:VCARD`;
 // Función para compartir la tarjeta
 function shareCard() {
     const shareData = {
-        title: 'Tarjeta Digital - Missael López Lira',
-        text: 'L.C.E Missael López Lira\nLicenciado en Comercio Exterior\n\nEmail: missaellopezlira75@gmail.com\nTeléfono: 442-115-4412\nDirección: C. Jose Maria Ochoa 423, Col Los Candiles, 76190. Corregidora, QRO.',
+        title: 'Tarjeta Digital - Erik Zahabad',
+        text: 'ERIK ZAHABAD\nLic. en Negocios Internacionales\nDistribuidor y Desarrollador de Software\n\nTeléfono: 775-102-7037',
         url: window.location.href
     };
     
@@ -59,12 +58,11 @@ function shareCard() {
 
 // Función auxiliar para copiar al portapapeles
 function copyToClipboard() {
-    const text = `L.C.E Missael López Lira
-Licenciado en Comercio Exterior
+    const text = `ERIK ZAHABAD
+Lic. en Negocios Internacionales
+Distribuidor y Desarrollador de Software
 
-Email: missaellopezlira75@gmail.com
-Teléfono: 442-115-4412
-Dirección: C. Jose Maria Ochoa 423, Col Los Candiles, 76190. Corregidora, QRO.`;
+Teléfono: 775-102-7037`;
     
     navigator.clipboard.writeText(text)
         .then(() => showNotification('¡Información copiada al portapapeles!'))
