@@ -3,83 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta Digital - Erik Zahabad</title>
+    <title>Erik Zahabad - Developer & Business</title>
     <link rel="icon" type="image/jpeg" href="logo3.jpg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="code-background"></div>
+    <div class="grid-background"></div>
+    
     <div class="container">
-        <div class="card-container">
+        <div class="card-wrapper">
             <div class="card">
-                <!-- Cara frontal -->
-                <div class="card-front">
-                    <div class="card-header">
-                        <div class="profile-img">
-                            <img src="logo3.jpg" alt="Logo Erik Zahabad" class="logo">
+                <!-- Front Side -->
+                <div class="card-face card-front">
+                    <!-- Terminal Header -->
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
                         </div>
-                        <h1 class="name">ERIK ZAHABAD</h1>
-                        <p class="title">Lic. en Negocios Internacionales</p>
-                        <p class="subtitle">Distribuidor y Desarrollador de Software</p>
+                        <span class="terminal-title">erik_zahabad.sh</span>
                     </div>
                     
-                    <div class="card-body">
-                        <div class="contact-info">
-                            <div class="info-item">
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:+527751027037">775-102-7037</a>
+                    <div class="card-content">
+                        <!-- Profile Section -->
+                        <div class="profile-section">
+                            <div class="profile-image">
+                                <img src="logo3.jpg" alt="Erik Zahabad">
+                                <div class="status-indicator"></div>
                             </div>
                             
-                            <div class="info-item">
-                                <i class="fas fa-globe"></i>
-                                <span>Servicios de Distribución y Desarrollo de Software</span>
+                            <div class="code-text">
+                                <span class="operator">const</span> 
+                                <span class="variable">developer</span> 
+                                <span class="operator">=</span> 
+                                <span class="bracket">{</span>
+                            </div>
+                            
+                            <h1 class="name">
+                                <span class="bracket-name">&lt;</span>ERIK ZAHABAD<span class="bracket-name">/&gt;</span>
+                            </h1>
+                            
+                            <div class="roles">
+                                <div class="role-badge">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Lic. Negocios Internacionales
+                                </div>
+                                <div class="role-badge">
+                                    <i class="fas fa-code"></i>
+                                    Software Developer
+                                </div>
+                                <div class="role-badge">
+                                    <i class="fas fa-boxes"></i>
+                                    Distribuidor
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <button class="btn" onclick="saveContact()">
-                            <i class="fas fa-address-card"></i>
-                            Guardar Contacto
-                        </button>
-                        <button class="btn btn-share" onclick="shareCard()">
-                            <i class="fas fa-share-alt"></i>
-                            Compartir
-                        </button>
+                        
+                        <!-- Contact Info -->
+                        <div class="contact-section">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">contact.phone</span>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+527751027037" class="contact-link">775-102-7037</a>
+                            </div>
+                            
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">services.list()</span>
+                                <i class="fas fa-laptop-code"></i>
+                                <span class="contact-text">Desarrollo & Distribución</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="actions">
+                            <button class="neon-btn" onclick="saveContact()">
+                                <i class="fas fa-download"></i>
+                                <span>Guardar Contacto</span>
+                                <div class="neon-glow"></div>
+                            </button>
+                            <button class="neon-btn secondary" onclick="shareCard()">
+                                <i class="fas fa-share-nodes"></i>
+                                <span>Compartir</span>
+                                <div class="neon-glow"></div>
+                            </button>
+                        </div>
+                        
+                        <div class="flip-indicator">
+                            <i class="fas fa-rotate"></i> Toca para ver más
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Cara trasera -->
-                <div class="card-back">
-                    <div class="card-header">
-                        <div class="profile-img">
-                            <i class="fas fa-briefcase"></i>
+                <!-- Back Side -->
+                <div class="card-face card-back">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
                         </div>
-                        <h1 class="name">Especialidades</h1>
+                        <span class="terminal-title">skills_&_services.json</span>
                     </div>
                     
-                    <div class="card-body">
-                        <div class="specialties">
-                            <div class="specialty-item">
-                                <i class="fas fa-boxes"></i>
-                                <div class="specialty-content">
-                                    <h3>Distribución</h3>
-                                    <p>Soluciones de distribución comercial y logística para negocios internacionales</p>
+                    <div class="card-content">
+                        <div class="skills-header">
+                            <h2>
+                                <i class="fas fa-terminal"></i>
+                                Stack & Servicios
+                            </h2>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
                                 </div>
+                                <h3>Desarrollo de Software</h3>
+                                <div class="skill-tags">
+                                    <span class="tag">Web Apps</span>
+                                    <span class="tag">APIs</span>
+                                    <span class="tag">Automation</span>
+                                </div>
+                                <p>Soluciones tecnológicas personalizadas para empresas</p>
                             </div>
                             
-                            <div class="specialty-item">
-                                <i class="fas fa-code"></i>
-                                <div class="specialty-content">
-                                    <h3>Desarrollo de Software</h3>
-                                    <p>Desarrollo de soluciones tecnológicas personalizadas para empresas</p>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-globe"></i>
                                 </div>
+                                <h3>Negocios Internacionales</h3>
+                                <div class="skill-tags">
+                                    <span class="tag">Distribución</span>
+                                    <span class="tag">Logística</span>
+                                    <span class="tag">Comercio</span>
+                                </div>
+                                <p>Estrategias comerciales y distribución a nivel internacional</p>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <p class="flip-hint"><i class="fas fa-undo"></i> Toca para volver</p>
+                        
+                        <div class="back-actions">
+                            <button class="neon-btn" onclick="document.querySelector('.card').classList.toggle('flipped')">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Volver</span>
+                                <div class="neon-glow"></div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

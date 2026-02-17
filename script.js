@@ -79,22 +79,26 @@ function showNotification(message) {
         position: fixed;
         top: 20px;
         right: 20px;
-        background: #28a745;
-        color: white;
-        padding: 15px 25px;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        background: linear-gradient(145deg, #1a1f3a, #2d3454);
+        color: #00d9ff;
+        padding: 18px 30px;
+        border-radius: 12px;
+        border: 2px solid #00d9ff;
+        box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3), 0 0 20px rgba(0, 217, 255, 0.2);
         z-index: 1000;
-        animation: slideInRight 0.3s ease-out;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     `;
     
     document.body.appendChild(notification);
     
     setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease-out';
+        notification.style.animation = 'slideOutRight 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
         setTimeout(() => {
             document.body.removeChild(notification);
-        }, 300);
+        }, 400);
     }, 3000);
 }
 
