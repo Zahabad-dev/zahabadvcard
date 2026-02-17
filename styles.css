@@ -602,7 +602,7 @@ body {
     .card-wrapper {
         height: 100vh;
         width: 100vw;
-        perspective: none;
+        perspective: 1500px;
     }
     
     .card {
@@ -610,10 +610,15 @@ body {
         height: 100vh;
         margin: 0;
         padding: 0;
+        transform-style: preserve-3d;
+    }
+    
+    .card.flipped {
+        transform: rotateY(180deg);
     }
     
     .card-face {
-        position: static !important;
+        position: absolute;
         height: 100vh;
         width: 100vw;
         display: flex;
@@ -622,6 +627,20 @@ body {
         margin: 0;
         padding: 0;
         box-shadow: none;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        top: 0;
+        left: 0;
+    }
+    
+    .card-front {
+        position: absolute;
+        z-index: 2;
+    }
+    
+    .card-back {
+        position: absolute;
+        transform: rotateY(180deg);
     }
     
     .card-content {
