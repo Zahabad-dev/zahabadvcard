@@ -104,6 +104,63 @@ function showNotification(message) {
     }, 3000);
 }
 
+// --- QR Modal ---
+let qrRendered = false;
+
+function showQrModal() {
+    const modal = document.getElementById('qr-modal');
+    if (!qrRendered) {
+        new QRCode(document.getElementById('qr-code'), {
+            text: window.location.href,
+            width: 220,
+            height: 220,
+            colorDark: '#0a0e27',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+        });
+        qrRendered = true;
+    }
+    modal.hidden = false;
+}
+
+function hideQrModal() {
+    document.getElementById('qr-modal').hidden = true;
+}
+
+document.getElementById('qr-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'qr-modal') hideQrModal();
+});
+
+// --- NFC (Web NFC, solo Android Chrome sobre HTTPS) ---
+const nfcBtn = document.getElementById('nfc-btn');
+if ('NDEFReader' in window) {
+    nfcBtn.hidden = false;
+}
+
+async function shareViaNfc() {
+    if (!('NDEFReader' in window)) {
+        showNotification('NFC solo disponible en Android con Chrome');
+        return;
+    }
+    try {
+        const ndef = new NDEFReader();
+        showNotification('Acerca un tag NFC para escribir tu tarjeta...');
+        await ndef.write({
+            records: [{ recordType: 'url', data: window.location.href }]
+        });
+        showNotification('¡Tag NFC escrito exitosamente!');
+    } catch (error) {
+        showNotification('No se pudo escribir el NFC: ' + error.message);
+    }
+}
+
+// --- Registro de Service Worker (PWA) ---
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+}
+
 // Agregar estilos para las animaciones de notificación
 const style = document.createElement('style');
 style.textContent = `

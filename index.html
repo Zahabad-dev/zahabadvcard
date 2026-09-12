@@ -13,6 +13,17 @@
     <link rel="icon" type="image/jpeg" href="logo3.jpg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0e27">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Zahabad">
+
+    <!-- QR generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <!-- Animated Background -->
@@ -106,6 +117,18 @@
                                 <div class="neon-glow"></div>
                             </button>
                         </div>
+                        <div class="actions">
+                            <button class="neon-btn secondary" onclick="showQrModal()">
+                                <i class="fas fa-qrcode"></i>
+                                <span>Mostrar QR</span>
+                                <div class="neon-glow"></div>
+                            </button>
+                            <button id="nfc-btn" class="neon-btn secondary" onclick="shareViaNfc()" hidden>
+                                <i class="fas fa-wifi"></i>
+                                <span>Compartir por NFC</span>
+                                <div class="neon-glow"></div>
+                            </button>
+                        </div>
                         
                         <div class="flip-indicator">
                             <i class="fas fa-rotate"></i> Toca para ver más
@@ -172,7 +195,19 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- QR Modal -->
+    <div id="qr-modal" class="qr-modal" hidden>
+        <div class="qr-modal-content">
+            <button class="qr-modal-close" onclick="hideQrModal()" aria-label="Cerrar">
+                <i class="fas fa-xmark"></i>
+            </button>
+            <h3>Escanea para guardar mi contacto</h3>
+            <div id="qr-code"></div>
+            <p class="qr-modal-hint">Apunta la cámara de tu teléfono aquí</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

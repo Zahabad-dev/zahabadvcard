@@ -840,4 +840,72 @@ body {
         font-size: 13px;
         gap: 5px;
     }
+
+/* QR Modal */
+.qr-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 8, 24, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.qr-modal[hidden] {
+    display: none;
+}
+
+.qr-modal-content {
+    position: relative;
+    background: linear-gradient(145deg, #1a1f3a, #2d3454);
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    padding: 32px 28px;
+    max-width: 340px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3), 0 0 20px rgba(0, 217, 255, 0.2);
+}
+
+.qr-modal-content h3 {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+#qr-code {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.qr-modal-hint {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+.qr-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 6px;
+}
+
+.qr-modal-close:hover {
+    color: var(--primary);
 }
