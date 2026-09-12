@@ -137,20 +137,49 @@ if ('NDEFReader' in window) {
     nfcBtn.hidden = false;
 }
 
+let nfcWriting = false;
+let nfcAbortController = null;
+
+async function writeNfcOnce() {
+    if (nfcAbortController) {
+        nfcAbortController.abort();
+    }
+    nfcAbortController = new AbortController();
+    const ndef = new NDEFReader();
+    await ndef.write(
+        { records: [{ recordType: 'url', data: window.location.href }] },
+        { signal: nfcAbortController.signal }
+    );
+}
+
 async function shareViaNfc() {
     if (!('NDEFReader' in window)) {
         showNotification('NFC solo disponible en Android con Chrome');
         return;
     }
+    if (nfcWriting) {
+        return; // evita disparar una segunda escritura mientras la primera sigue activa
+    }
+    nfcWriting = true;
+    nfcBtn.disabled = true;
     try {
-        const ndef = new NDEFReader();
-        showNotification('Acerca un tag NFC para escribir tu tarjeta...');
-        await ndef.write({
-            records: [{ recordType: 'url', data: window.location.href }]
-        });
+        showNotification('Acerca un tag NFC y no lo muevas...');
+        try {
+            await writeNfcOnce();
+        } catch (firstError) {
+            // Errores de carrera del stack NFC de Android suelen resolverse con un solo reintento
+            if (String(firstError.message).includes('cancelled') || firstError.name === 'NetworkError') {
+                await writeNfcOnce();
+            } else {
+                throw firstError;
+            }
+        }
         showNotification('¡Tag NFC escrito exitosamente!');
     } catch (error) {
-        showNotification('No se pudo escribir el NFC: ' + error.message);
+        showNotification('No se pudo escribir el NFC: mantén el tag quieto y vuelve a intentar');
+    } finally {
+        nfcWriting = false;
+        nfcBtn.disabled = false;
     }
 }
 
