@@ -1,7 +1,7 @@
 {
-  "name": "Zahabad - Tarjeta Digital",
-  "short_name": "Zahabad",
-  "description": "Tarjeta digital de contacto de Zahabad",
+  "name": "Vcard BS",
+  "short_name": "Vcard BS",
+  "description": "Tarjeta digital de contacto - Black Sheep Agencia",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

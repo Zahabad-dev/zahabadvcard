@@ -3,24 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zahabad - Developer & Business</title>
-    
+    <title>Terrazas - Negocios & Fotografía</title>
+
     <!-- Cache Control -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    
-    <link rel="icon" type="image/png" href="logo-blackbot.png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0a0e27">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Vcard BS">
+    <link rel="icon" type="image/png" href="logo-blackbot.png">
+    <link rel="stylesheet" href="styles-terrazas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- QR generator -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -29,7 +21,7 @@
     <!-- Animated Background -->
     <div class="code-background"></div>
     <div class="grid-background"></div>
-    
+
     <div class="container">
         <div class="card-wrapper">
             <div class="card">
@@ -42,44 +34,46 @@
                             <span class="btn-minimize"></span>
                             <span class="btn-maximize"></span>
                         </div>
-                        <span class="terminal-title">erik_zahabad.sh</span>
+                        <span class="terminal-title">juancarlos_terrazas.sh</span>
                     </div>
-                    
+
                     <div class="card-content">
                         <!-- Profile Section -->
                         <div class="profile-section">
                             <div class="profile-image">
-                                <img src="logo-blackbot.png" alt="Zahabad">
+                                <span class="avatar-icon">
+                                    <i class="fas fa-camera-retro"></i>
+                                </span>
                                 <div class="status-indicator"></div>
                             </div>
-                            
+
                             <div class="code-text">
-                                <span class="operator">const</span> 
-                                <span class="variable">developer</span> 
-                                <span class="operator">=</span> 
+                                <span class="operator">const</span>
+                                <span class="variable">negocio</span>
+                                <span class="operator">=</span>
                                 <span class="bracket">{</span>
                             </div>
-                            
+
                             <h1 class="name">
-                                <span class="bracket-name">&lt;</span>ZAHABAD<span class="bracket-name">/&gt;</span>
+                                <span class="bracket-name">&lt;</span>TERRAZAS<span class="bracket-name">/&gt;</span>
                             </h1>
-                            
+
                             <div class="roles">
                                 <div class="role-badge">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    Lic. Negocios Internacionales
+                                    <i class="fas fa-gear"></i>
+                                    Ing. Desarrollo de Negocios
                                 </div>
                                 <div class="role-badge">
-                                    <i class="fas fa-code"></i>
-                                    Software Developer
+                                    <i class="fas fa-camera-retro"></i>
+                                    Fotógrafo
                                 </div>
                                 <div class="role-badge">
-                                    <i class="fas fa-boxes"></i>
-                                    Distribuidor
+                                    <i class="fas fa-clapperboard"></i>
+                                    Filmmaker
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Contact Info -->
                         <div class="contact-section">
                             <div class="terminal-line">
@@ -87,7 +81,16 @@
                                 <span class="command">contact.phone</span>
                                 <span class="value-group">
                                     <i class="fas fa-phone"></i>
-                                    <a href="tel:+527751641833" class="contact-link">775-164-1833</a>
+                                    <a href="tel:+527717818402" class="contact-link">771-781-8402</a>
+                                </span>
+                            </div>
+
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">contact.phone2</span>
+                                <span class="value-group">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+527752012770" class="contact-link">775-201-2770</a>
                                 </span>
                             </div>
 
@@ -104,12 +107,12 @@
                                 <span class="prompt">$</span>
                                 <span class="command">services.list()</span>
                                 <span class="value-group">
-                                    <i class="fas fa-laptop-code"></i>
-                                    <span class="contact-text">Desarrollo & Distribución</span>
+                                    <i class="fas fa-video"></i>
+                                    <span class="contact-text">Fotografía, Video & Negocios</span>
                                 </span>
                             </div>
                         </div>
-                        
+
                         <!-- Action Buttons -->
                         <div class="actions">
                             <button class="neon-btn" onclick="saveContact()">
@@ -135,13 +138,13 @@
                                 <div class="neon-glow"></div>
                             </button>
                         </div>
-                        
+
                         <div class="flip-indicator">
                             <i class="fas fa-rotate"></i> Toca para ver más
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Back Side -->
                 <div class="card-face card-back">
                     <div class="terminal-header">
@@ -152,7 +155,7 @@
                         </div>
                         <span class="terminal-title">skills_&_services.json</span>
                     </div>
-                    
+
                     <div class="card-content">
                         <div class="skills-header">
                             <h2>
@@ -160,35 +163,35 @@
                                 Stack & Servicios
                             </h2>
                         </div>
-                        
+
                         <div class="skills-grid">
                             <div class="skill-card">
                                 <div class="skill-icon">
-                                    <i class="fas fa-code"></i>
+                                    <i class="fas fa-camera-retro"></i>
                                 </div>
-                                <h3>Desarrollo de Software</h3>
+                                <h3>Fotografía & Video</h3>
                                 <div class="skill-tags">
-                                    <span class="tag">Web Apps</span>
-                                    <span class="tag">APIs</span>
-                                    <span class="tag">Automation</span>
+                                    <span class="tag">Fotografía</span>
+                                    <span class="tag">Video</span>
+                                    <span class="tag">Edición</span>
                                 </div>
-                                <p>Soluciones tecnológicas personalizadas para empresas</p>
+                                <p>Cobertura fotográfica y audiovisual profesional</p>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
-                                    <i class="fas fa-globe"></i>
+                                    <i class="fas fa-gear"></i>
                                 </div>
-                                <h3>Negocios Internacionales</h3>
+                                <h3>Desarrollo de Negocios</h3>
                                 <div class="skill-tags">
-                                    <span class="tag">Distribución</span>
-                                    <span class="tag">Logística</span>
-                                    <span class="tag">Comercio</span>
+                                    <span class="tag">Estrategia</span>
+                                    <span class="tag">Negociación</span>
+                                    <span class="tag">Crecimiento</span>
                                 </div>
-                                <p>Estrategias comerciales y distribución a nivel internacional</p>
+                                <p>Estructuración e impulso de negocios y proyectos</p>
                             </div>
                         </div>
-                        
+
                         <div class="back-actions">
                             <button class="neon-btn" onclick="document.querySelector('.card').classList.toggle('flipped')">
                                 <i class="fas fa-arrow-left"></i>
@@ -222,6 +225,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script-terrazas.js"></script>
 </body>
 </html>
