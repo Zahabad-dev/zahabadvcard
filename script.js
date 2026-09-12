@@ -13,9 +13,10 @@ card.addEventListener('click', function(e) {
 function saveContact() {
     const vCard = `BEGIN:VCARD
 VERSION:3.0
-FN:ERIK ZAHABAD
-N:ZAHABAD;ERIK;;;
-TEL;TYPE=CELL:+527751027037
+FN:ZAHABAD
+N:ZAHABAD;;;;
+TEL;TYPE=CELL:+527751641833
+URL:https://www.blacksheepagencia.com
 TITLE:Lic. en Negocios Internacionales
 ROLE:Distribuidor y Desarrollador de Software
 END:VCARD`;
@@ -38,8 +39,8 @@ END:VCARD`;
 // Función para compartir la tarjeta
 function shareCard() {
     const shareData = {
-        title: 'Tarjeta Digital - Erik Zahabad',
-        text: 'ERIK ZAHABAD\nLic. en Negocios Internacionales\nDistribuidor y Desarrollador de Software\n\nTeléfono: 775-102-7037',
+        title: 'Tarjeta Digital - Zahabad',
+        text: 'ZAHABAD\nLic. en Negocios Internacionales\nDistribuidor y Desarrollador de Software\n\nTeléfono: 775-164-1833\nWeb: www.blacksheepagencia.com',
         url: window.location.href
     };
     
@@ -58,11 +59,12 @@ function shareCard() {
 
 // Función auxiliar para copiar al portapapeles
 function copyToClipboard() {
-    const text = `ERIK ZAHABAD
+    const text = `ZAHABAD
 Lic. en Negocios Internacionales
 Distribuidor y Desarrollador de Software
 
-Teléfono: 775-102-7037`;
+Teléfono: 775-164-1833
+Web: www.blacksheepagencia.com`;
     
     navigator.clipboard.writeText(text)
         .then(() => showNotification('¡Información copiada al portapapeles!'))
