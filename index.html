@@ -85,22 +85,28 @@
                             <div class="terminal-line">
                                 <span class="prompt">$</span>
                                 <span class="command">contact.phone</span>
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:+527751641833" class="contact-link">775-164-1833</a>
+                                <span class="value-group">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+527751641833" class="contact-link">775-164-1833</a>
+                                </span>
                             </div>
 
                             <div class="terminal-line">
                                 <span class="prompt">$</span>
                                 <span class="command">contact.web</span>
-                                <i class="fas fa-globe"></i>
-                                <a href="https://www.blacksheepagencia.com" target="_blank" rel="noopener" class="contact-link">blacksheepagencia.com</a>
+                                <span class="value-group">
+                                    <i class="fas fa-globe"></i>
+                                    <a href="https://www.blacksheepagencia.com" target="_blank" rel="noopener" class="contact-link">blacksheepagencia.com</a>
+                                </span>
                             </div>
 
                             <div class="terminal-line">
                                 <span class="prompt">$</span>
                                 <span class="command">services.list()</span>
-                                <i class="fas fa-laptop-code"></i>
-                                <span class="contact-text">Desarrollo & Distribución</span>
+                                <span class="value-group">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <span class="contact-text">Desarrollo & Distribución</span>
+                                </span>
                             </div>
                         </div>
                         
@@ -202,7 +208,15 @@
             <button class="qr-modal-close" onclick="hideQrModal()" aria-label="Cerrar">
                 <i class="fas fa-xmark"></i>
             </button>
-            <h3>Escanea para guardar mi contacto</h3>
+            <div class="qr-tabs">
+                <button id="qr-tab-card" class="qr-tab active" onclick="setQrMode('card')">
+                    <i class="fas fa-id-card"></i> Tarjeta
+                </button>
+                <button id="qr-tab-web" class="qr-tab" onclick="setQrMode('web')">
+                    <i class="fas fa-globe"></i> Sitio web
+                </button>
+            </div>
+            <h3 id="qr-title">Escanea para guardar mi contacto</h3>
             <div id="qr-code"></div>
             <p class="qr-modal-hint">Apunta la cámara de tu teléfono aquí</p>
         </div>

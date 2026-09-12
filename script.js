@@ -105,20 +105,48 @@ function showNotification(message) {
 }
 
 // --- QR Modal ---
-let qrRendered = false;
+const WEBSITE_URL = 'https://www.blacksheepagencia.com';
+
+const qrModes = {
+    card: {
+        url: window.location.href,
+        title: 'Escanea para guardar mi contacto'
+    },
+    web: {
+        url: WEBSITE_URL,
+        title: 'Escanea para visitar mi sitio web'
+    }
+};
+
+let qrInstance = null;
+let currentQrMode = 'card';
+
+function renderQr(mode) {
+    const qrCodeEl = document.getElementById('qr-code');
+    qrCodeEl.innerHTML = '';
+    qrInstance = new QRCode(qrCodeEl, {
+        text: qrModes[mode].url,
+        width: 220,
+        height: 220,
+        colorDark: '#0a0e27',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+    });
+    document.getElementById('qr-title').textContent = qrModes[mode].title;
+}
+
+function setQrMode(mode) {
+    if (mode === currentQrMode && qrInstance) return;
+    currentQrMode = mode;
+    document.getElementById('qr-tab-card').classList.toggle('active', mode === 'card');
+    document.getElementById('qr-tab-web').classList.toggle('active', mode === 'web');
+    renderQr(mode);
+}
 
 function showQrModal() {
     const modal = document.getElementById('qr-modal');
-    if (!qrRendered) {
-        new QRCode(document.getElementById('qr-code'), {
-            text: window.location.href,
-            width: 220,
-            height: 220,
-            colorDark: '#0a0e27',
-            colorLight: '#ffffff',
-            correctLevel: QRCode.CorrectLevel.M
-        });
-        qrRendered = true;
+    if (!qrInstance) {
+        renderQr(currentQrMode);
     }
     modal.hidden = false;
 }
