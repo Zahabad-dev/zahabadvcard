@@ -1,16 +1,14 @@
-# Tarjeta Digital - Missael López Lira
+# Tarjeta Digital - Zahabad (Codeva)
 
-Tarjeta de presentación digital empresarial.
-
-## Desplegar en Vercel
-
-1. Ve a [vercel.com](https://vercel.com)
-2. Crea una cuenta gratuita
-3. Sube esta carpeta o conéctala con GitHub
+Tarjeta de contacto digital (PWA estática) desplegada en Vercel: https://zahabadvcard.vercel.app
 
 ## Archivos
 
-- index.html - Página principal
-- styles.css - Estilos
-- script.js - Funcionalidad
-- logo.png - Logotipo
+- `index.html`, `styles.css`, `script.js`: la tarjeta (vCard, QR, compartir, NFC)
+- `manifest.json`, `sw.js`: PWA (id propio `codeva-zahabad-card`)
+- `logo-codeva.png`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`, `og-image.png`: marca Codeva
+- `vercel.json`: cabeceras de seguridad y caché
+
+## Actualizar
+
+Al cambiar CSS, JS o imágenes, sube la versión de `CACHE_NAME` en `sw.js` y haz push a `main`.

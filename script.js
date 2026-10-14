@@ -1,3 +1,4 @@
+const CARD_URL = 'https://zahabadvcard.vercel.app/';
 // Efecto de volteo de tarjeta
 const card = document.querySelector('.card');
 
@@ -11,27 +12,30 @@ card.addEventListener('click', function(e) {
 
 // Función para guardar el contacto como vCard
 function saveContact() {
-    const vCard = `BEGIN:VCARD
-VERSION:3.0
-FN:ZAHABAD
-N:ZAHABAD;;;;
-TEL;TYPE=CELL:+527751641833
-URL:https://www.codevasoluciones.com
-TITLE:Lic. en Negocios Internacionales
-ROLE:Distribuidor y Desarrollador de Software
-END:VCARD`;
+    const vCard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Erik Zahabad',
+        'N:Zahabad;Erik;;;',
+        'ORG:Codeva',
+        'TITLE:Lic. en Negocios Internacionales',
+        'ROLE:Distribuidor y Desarrollador de Software',
+        'TEL;TYPE=CELL:+527751641833',
+        'URL:https://www.codevasoluciones.com',
+        'END:VCARD'
+    ].join(String.fromCharCode(13, 10));
 
-    const blob = new Blob([vCard], { type: 'text/vcard' });
+    const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
     const url = window.URL.createObjectURL(blob);
-    
+
     const link = document.createElement('a');
     link.href = url;
     link.download = 'Erik_Zahabad.vcf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
-    
+    setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+
     // Mostrar mensaje de éxito
     showNotification('¡Contacto guardado exitosamente!');
 }
@@ -41,7 +45,7 @@ function shareCard() {
     const shareData = {
         title: 'Tarjeta Digital - Zahabad',
         text: 'ZAHABAD\nLic. en Negocios Internacionales\nDistribuidor y Desarrollador de Software\n\nTeléfono: 775-164-1833\nWeb: codevasoluciones.com',
-        url: window.location.href
+        url: CARD_URL
     };
     
     if (navigator.share) {
@@ -66,6 +70,10 @@ Distribuidor y Desarrollador de Software
 Teléfono: 775-164-1833
 Web: codevasoluciones.com`;
     
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        showNotification('No se pudo copiar la información');
+        return;
+    }
     navigator.clipboard.writeText(text)
         .then(() => showNotification('¡Información copiada al portapapeles!'))
         .catch(() => showNotification('No se pudo copiar la información'));
@@ -109,7 +117,7 @@ const WEBSITE_URL = 'https://www.codevasoluciones.com';
 
 const qrModes = {
     card: {
-        url: window.location.href,
+        url: CARD_URL,
         title: 'Escanea para guardar mi contacto'
     },
     web: {
@@ -123,7 +131,11 @@ let currentQrMode = 'card';
 
 function renderQr(mode) {
     const qrCodeEl = document.getElementById('qr-code');
-    qrCodeEl.innerHTML = '';
+    qrCodeEl.replaceChildren();
+    if (typeof QRCode === 'undefined') {
+        showNotification('No se pudo generar el QR, revisa tu conexión');
+        return;
+    }
     qrInstance = new QRCode(qrCodeEl, {
         text: qrModes[mode].url,
         width: 220,
@@ -175,7 +187,7 @@ async function writeNfcOnce() {
     nfcAbortController = new AbortController();
     const ndef = new NDEFReader();
     await ndef.write(
-        { records: [{ recordType: 'url', data: window.location.href }] },
+        { records: [{ recordType: 'url', data: CARD_URL }] },
         { signal: nfcAbortController.signal }
     );
 }
@@ -213,9 +225,7 @@ async function shareViaNfc() {
 
 // --- Registro de Service Worker (PWA) ---
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-    });
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
 }
 
 // Agregar estilos para las animaciones de notificación
