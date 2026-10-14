@@ -1,8 +1,8 @@
-const CACHE_NAME = 'codeva-zahabad-card-v4';
+const CACHE_NAME = 'codeva-zahabad-card-v5';
 const ASSETS = [
     '/',
-    '/styles.css',
-    '/script.js',
+    '/styles.css?v=5',
+    '/script.js?v=5',
     '/logo-codeva.png',
     '/icon-192.png',
     '/icon-512.png',
@@ -27,35 +27,22 @@ self.addEventListener('activate', (event) => {
     );
 });
 
+// Red primero para todo (nunca sirve HTML/CSS/JS viejo si hay conexión);
+// el caché solo entra cuando no hay red.
 self.addEventListener('fetch', (event) => {
     const req = event.request;
     if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
 
-    // Páginas: red primero (contenido fresco), caché si no hay conexión
-    if (req.mode === 'navigate') {
-        event.respondWith(
-            fetch(req).then((res) => {
-                if (res.ok) {
-                    const copy = res.clone();
-                    caches.open(CACHE_NAME).then((c) => c.put('/', copy));
-                }
-                return res;
-            }).catch(() => caches.match('/').then((r) => r || Response.error()))
-        );
-        return;
-    }
-
-    // Estáticos: caché primero, se actualiza en segundo plano
     event.respondWith(
-        caches.match(req).then((cached) => {
-            const network = fetch(req).then((res) => {
-                if (res.ok) {
-                    const copy = res.clone();
-                    caches.open(CACHE_NAME).then((c) => c.put(req, copy));
-                }
-                return res;
-            }).catch(() => cached);
-            return cached || network;
-        })
+        fetch(req).then((res) => {
+            if (res.ok) {
+                const copy = res.clone();
+                const key = req.mode === 'navigate' ? '/' : req;
+                caches.open(CACHE_NAME).then((c) => c.put(key, copy));
+            }
+            return res;
+        }).catch(() =>
+            caches.match(req.mode === 'navigate' ? '/' : req).then((r) => r || Response.error())
+        )
     );
 });
