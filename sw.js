@@ -1,10 +1,10 @@
-const CACHE_NAME = 'zahabad-vcard-v5';
+const CACHE_NAME = 'zahabad-vcard-v6';
 const ASSETS = [
     '/',
     '/index.html',
     '/styles.css',
     '/script.js',
-    '/logo-blackbot.png',
+    '/logo-codeva.png',
     '/og-image.png',
     '/manifest.json'
 ];
