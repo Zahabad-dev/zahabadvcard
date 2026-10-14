@@ -16,7 +16,7 @@ VERSION:3.0
 FN:ZAHABAD
 N:ZAHABAD;;;;
 TEL;TYPE=CELL:+527751641833
-URL:https://codeva-delta.vercel.app
+URL:https://www.codevasoluciones.com
 TITLE:Lic. en Negocios Internacionales
 ROLE:Distribuidor y Desarrollador de Software
 END:VCARD`;
@@ -40,7 +40,7 @@ END:VCARD`;
 function shareCard() {
     const shareData = {
         title: 'Tarjeta Digital - Zahabad',
-        text: 'ZAHABAD\nLic. en Negocios Internacionales\nDistribuidor y Desarrollador de Software\n\nTeléfono: 775-164-1833\nWeb: codeva-delta.vercel.app',
+        text: 'ZAHABAD\nLic. en Negocios Internacionales\nDistribuidor y Desarrollador de Software\n\nTeléfono: 775-164-1833\nWeb: codevasoluciones.com',
         url: window.location.href
     };
     
@@ -64,7 +64,7 @@ Lic. en Negocios Internacionales
 Distribuidor y Desarrollador de Software
 
 Teléfono: 775-164-1833
-Web: codeva-delta.vercel.app`;
+Web: codevasoluciones.com`;
     
     navigator.clipboard.writeText(text)
         .then(() => showNotification('¡Información copiada al portapapeles!'))
@@ -105,7 +105,7 @@ function showNotification(message) {
 }
 
 // --- QR Modal ---
-const WEBSITE_URL = 'https://codeva-delta.vercel.app';
+const WEBSITE_URL = 'https://www.codevasoluciones.com';
 
 const qrModes = {
     card: {

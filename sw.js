@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zahabad-vcard-v6';
+const CACHE_NAME = 'zahabad-vcard-v7';
 const ASSETS = [
     '/',
     '/index.html',
