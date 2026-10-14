@@ -1,4 +1,4 @@
-const CACHE_NAME = 'codeva-zahabad-card-v3';
+const CACHE_NAME = 'codeva-zahabad-card-v4';
 const ASSETS = [
     '/',
     '/styles.css',
