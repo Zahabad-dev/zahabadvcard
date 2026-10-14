@@ -1,6 +1,6 @@
 # Tarjeta Digital - Zahabad (Codeva)
 
-Tarjeta de contacto digital (PWA estática) desplegada en Vercel: https://zahabadvcard.vercel.app
+Tarjeta de contacto digital (PWA estática) desplegada en Vercel: https://zahabad-codeva.vercel.app
 
 ## Archivos
 

@@ -2,238 +2,153 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Zahabad - Developer & Business</title>
+    <meta name="description" content="Tarjeta digital de Zahabad - Codeva. Guarda el contacto en un toque.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Zahabad - Tarjeta Digital">
     <meta property="og:description" content="Software Developer, Distribuidor y Lic. en Negocios Internacionales. Guarda mi contacto en un toque.">
-    <meta property="og:image" content="https://zahabadvcard.vercel.app/og-image.png">
+    <meta property="og:image" content="https://zahabad-codeva.vercel.app/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://zahabadvcard.vercel.app">
+    <meta property="og:url" content="https://zahabad-codeva.vercel.app">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Zahabad - Tarjeta Digital">
     <meta name="twitter:description" content="Software Developer, Distribuidor y Lic. en Negocios Internacionales.">
-    <meta name="twitter:image" content="https://zahabadvcard.vercel.app/og-image.png">
-    
-    <link rel="icon" type="image/png" href="logo-codeva.png">
+    <meta name="twitter:image" content="https://zahabad-codeva.vercel.app/og-image.png">
+
+    <link rel="icon" type="image/png" href="icon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="styles.css">
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0a0e27">
+    <meta name="theme-color" content="#07080c">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="description" content="Tarjeta digital de Zahabad - Codeva. Guarda el contacto en un toque.">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Zahabad">
 
-    <!-- QR generator -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="code-background"></div>
-    <div class="grid-background"></div>
-    
-    <div class="container">
-        <div class="card-wrapper">
-            <div class="card">
-                <!-- Front Side -->
-                <div class="card-face card-front">
-                    <!-- Terminal Header -->
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="btn-close"></span>
-                            <span class="btn-minimize"></span>
-                            <span class="btn-maximize"></span>
-                        </div>
-                        <span class="terminal-title">erik_zahabad.sh</span>
-                    </div>
-                    
-                    <div class="card-content">
-                        <!-- Profile Section -->
-                        <div class="profile-section">
-                            <div class="profile-image">
-                                <img src="logo-codeva.png" alt="Zahabad">
-                                <div class="status-indicator"></div>
-                            </div>
-                            
-                            <div class="code-text">
-                                <span class="operator">const</span> 
-                                <span class="variable">developer</span> 
-                                <span class="operator">=</span> 
-                                <span class="bracket">{</span>
-                            </div>
-                            
-                            <h1 class="name">
-                                <span class="bracket-name">&lt;</span>ZAHABAD<span class="bracket-name">/&gt;</span>
-                            </h1>
-                            
-                            <div class="roles">
-                                <div class="role-badge">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    Lic. Negocios Internacionales
-                                </div>
-                                <div class="role-badge">
-                                    <i class="fas fa-code"></i>
-                                    Software Developer
-                                </div>
-                                <div class="role-badge">
-                                    <i class="fas fa-boxes"></i>
-                                    Distribuidor
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Contact Info -->
-                        <div class="contact-section">
-                            <div class="terminal-line">
-                                <span class="prompt">$</span>
-                                <span class="command">contact.phone</span>
-                                <span class="value-group">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+527751641833" class="contact-link">775-164-1833</a>
-                                </span>
-                            </div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
 
-                            <div class="terminal-line">
-                                <span class="prompt">$</span>
-                                <span class="command">contact.web</span>
-                                <span class="value-group">
-                                    <i class="fas fa-globe"></i>
-                                    <a href="https://www.codevasoluciones.com" target="_blank" rel="noopener" class="contact-link">codevasoluciones.com</a>
-                                </span>
-                            </div>
+    <main class="stage">
+        <div class="card" id="card">
 
-                            <div class="terminal-line">
-                                <span class="prompt">$</span>
-                                <span class="command">services.list()</span>
-                                <span class="value-group">
-                                    <i class="fas fa-laptop-code"></i>
-                                    <span class="contact-text">Desarrollo & Distribución</span>
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="actions">
-                            <button class="neon-btn" onclick="saveContact()">
-                                <i class="fas fa-download"></i>
-                                <span>Guardar Contacto</span>
-                                <div class="neon-glow"></div>
-                            </button>
-                            <button class="neon-btn secondary" onclick="shareCard()">
-                                <i class="fas fa-share-nodes"></i>
-                                <span>Compartir</span>
-                                <div class="neon-glow"></div>
-                            </button>
-                        </div>
-                        <div class="actions">
-                            <button class="neon-btn secondary" onclick="showQrModal()">
-                                <i class="fas fa-qrcode"></i>
-                                <span>Mostrar QR</span>
-                                <div class="neon-glow"></div>
-                            </button>
-                            <button id="nfc-btn" class="neon-btn secondary" onclick="shareViaNfc()" hidden>
-                                <i class="fas fa-wifi"></i>
-                                <span>Compartir por NFC</span>
-                                <div class="neon-glow"></div>
-                            </button>
-                        </div>
-                        
-                        <div class="flip-indicator">
-                            <i class="fas fa-rotate"></i> Toca para ver más
-                        </div>
+            <!-- Frente -->
+            <section class="face face-front" id="face-front" aria-label="Tarjeta de contacto">
+                <div class="spot" aria-hidden="true"></div>
+
+                <header class="bar">
+                    <span class="bar-id"><span class="dot"></span>CODEVA <em>/ ID 001</em></span>
+                    <button class="icon-btn" id="sound-btn" type="button" aria-label="Sonido activado" aria-pressed="true">
+                        <i class="fas fa-volume-high"></i>
+                    </button>
+                </header>
+
+                <div class="hero rise" style="--d:.05s">
+                    <div class="mark">
+                        <img src="logo-codeva.png" alt="Codeva" width="64" height="64">
                     </div>
+                    <p class="eyebrow">Software · Negocios · Distribución</p>
+                    <h1 class="name">Erik Zahabad</h1>
+                    <p class="role">Lic. en Negocios Internacionales<br>Desarrollador de Software</p>
                 </div>
-                
-                <!-- Back Side -->
-                <div class="card-face card-back">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="btn-close"></span>
-                            <span class="btn-minimize"></span>
-                            <span class="btn-maximize"></span>
-                        </div>
-                        <span class="terminal-title">skills_&_services.json</span>
+
+                <ul class="rows rise" style="--d:.15s">
+                    <li>
+                        <a class="row" href="tel:+527751641833" data-sfx="tick">
+                            <i class="fas fa-phone"></i>
+                            <span class="row-label">Teléfono</span>
+                            <span class="row-value">775 164 1833</span>
+                            <i class="fas fa-arrow-up-right row-go"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="row" href="https://www.codevasoluciones.com" target="_blank" rel="noopener" data-sfx="tick">
+                            <i class="fas fa-globe"></i>
+                            <span class="row-label">Web</span>
+                            <span class="row-value">codevasoluciones.com</span>
+                            <i class="fas fa-arrow-up-right row-go"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="actions rise" style="--d:.25s">
+                    <button class="btn primary" id="btn-save" type="button">
+                        <i class="fas fa-user-plus"></i><span>Guardar contacto</span>
+                    </button>
+                    <div class="actions-row">
+                        <button class="btn" id="btn-share" type="button"><i class="fas fa-share-nodes"></i><span>Compartir</span></button>
+                        <button class="btn" id="btn-qr" type="button"><i class="fas fa-qrcode"></i><span>QR</span></button>
                     </div>
-                    
-                    <div class="card-content">
-                        <div class="skills-header">
-                            <h2>
-                                <i class="fas fa-terminal"></i>
-                                Stack & Servicios
-                            </h2>
-                        </div>
-                        
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <h3>Desarrollo de Software</h3>
-                                <div class="skill-tags">
-                                    <span class="tag">Web Apps</span>
-                                    <span class="tag">APIs</span>
-                                    <span class="tag">Automation</span>
-                                </div>
-                                <p>Soluciones tecnológicas personalizadas para empresas</p>
-                            </div>
-                            
-                            <div class="skill-card">
-                                <div class="skill-icon">
-                                    <i class="fas fa-globe"></i>
-                                </div>
-                                <h3>Negocios Internacionales</h3>
-                                <div class="skill-tags">
-                                    <span class="tag">Distribución</span>
-                                    <span class="tag">Logística</span>
-                                    <span class="tag">Comercio</span>
-                                </div>
-                                <p>Estrategias comerciales y distribución a nivel internacional</p>
-                            </div>
-                        </div>
-                        
-                        <div class="back-actions">
-                            <button class="neon-btn" onclick="document.querySelector('.card').classList.toggle('flipped')">
-                                <i class="fas fa-arrow-left"></i>
-                                <span>Volver</span>
-                                <div class="neon-glow"></div>
-                            </button>
-                        </div>
-                    </div>
+                    <button id="nfc-btn" class="btn" type="button" hidden><i class="fas fa-wifi"></i><span>Compartir por NFC</span></button>
                 </div>
-            </div>
+
+                <button class="flip" id="btn-flip" type="button" aria-controls="face-back" aria-expanded="false">
+                    Ver servicios <i class="fas fa-arrow-right"></i>
+                </button>
+            </section>
+
+            <!-- Reverso -->
+            <section class="face face-back" id="face-back" aria-label="Servicios" inert>
+                <div class="spot" aria-hidden="true"></div>
+
+                <header class="bar">
+                    <span class="bar-id"><span class="dot"></span>CODEVA <em>/ SERVICIOS</em></span>
+                </header>
+
+                <div class="services">
+                    <article class="service">
+                        <div class="service-head">
+                            <i class="fas fa-code"></i>
+                            <h2>Desarrollo de software</h2>
+                        </div>
+                        <p>Soluciones tecnológicas a la medida para empresas.</p>
+                        <div class="tags"><span>Web apps</span><span>APIs</span><span>Automatización</span></div>
+                    </article>
+
+                    <article class="service">
+                        <div class="service-head">
+                            <i class="fas fa-earth-americas"></i>
+                            <h2>Negocios internacionales</h2>
+                        </div>
+                        <p>Estrategia comercial y distribución a nivel internacional.</p>
+                        <div class="tags"><span>Distribución</span><span>Logística</span><span>Comercio</span></div>
+                    </article>
+                </div>
+
+                <button class="flip" id="btn-back" type="button">
+                    <i class="fas fa-arrow-left"></i> Volver
+                </button>
+            </section>
         </div>
-    </div>
+    </main>
 
-    <!-- QR Modal -->
-    <div id="qr-modal" class="qr-modal" hidden>
-        <div class="qr-modal-content">
-            <button class="qr-modal-close" onclick="hideQrModal()" aria-label="Cerrar">
-                <i class="fas fa-xmark"></i>
-            </button>
-            <div class="qr-tabs">
-                <button id="qr-tab-card" class="qr-tab active" onclick="setQrMode('card')">
-                    <i class="fas fa-id-card"></i> Tarjeta
-                </button>
-                <button id="qr-tab-web" class="qr-tab" onclick="setQrMode('web')">
-                    <i class="fas fa-globe"></i> Sitio web
-                </button>
+    <!-- Modal QR -->
+    <div id="qr-modal" class="modal" hidden>
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="qr-title">
+            <button class="icon-btn modal-close" id="qr-close" type="button" aria-label="Cerrar"><i class="fas fa-xmark"></i></button>
+            <div class="tabs" role="tablist">
+                <button id="qr-tab-card" class="tab active" type="button" role="tab" aria-selected="true">Tarjeta</button>
+                <button id="qr-tab-web" class="tab" type="button" role="tab" aria-selected="false">Sitio web</button>
             </div>
             <h3 id="qr-title">Escanea para guardar mi contacto</h3>
             <div id="qr-code"></div>
-            <p class="qr-modal-hint">Apunta la cámara de tu teléfono aquí</p>
+            <p class="hint">Apunta la cámara de tu teléfono aquí</p>
         </div>
     </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <script defer src="script.js"></script>
 </body>
