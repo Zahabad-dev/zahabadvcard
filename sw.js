@@ -1,8 +1,8 @@
-const CACHE_NAME = 'codeva-zahabad-card-v5';
+const CACHE_NAME = 'codeva-zahabad-card-v6';
 const ASSETS = [
     '/',
-    '/styles.css?v=5',
-    '/script.js?v=5',
+    '/styles.css?v=6',
+    '/script.js?v=6',
     '/logo-codeva.png',
     '/icon-192.png',
     '/icon-512.png',
